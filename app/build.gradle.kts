@@ -1,6 +1,7 @@
+
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import java.io.FileInputStream
-import java.util.*
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -66,7 +67,6 @@ android {
             signingConfig = signingConfigs.getByName("config")
             manifestPlaceholders["app_name_value"] = "玩安卓dev"
             applicationIdSuffix = ".dev"
-            versionNameSuffix = "-dev"
         }
     }
     compileOptions {
