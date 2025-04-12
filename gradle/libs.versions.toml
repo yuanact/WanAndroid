@@ -1,8 +1,8 @@
 [versions]
 agp = "8.9.1"
-androidxComposeBom = "2025.03.01"
+androidxComposeBom = "2025.04.00"
 androidxConstraintlayout = "2.2.1"
-androidxCoreKtx = "1.15.0"
+androidxCoreKtx = "1.16.0"
 androidxFragmentKtx = "1.8.6"
 androidxLifecycle = "2.8.7"
 androidxNavigationCompose = "2.8.9"
