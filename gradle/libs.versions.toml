@@ -1,5 +1,5 @@
 [versions]
-agp = "8.9.1"
+agp = "8.9.2"
 androidxComposeBom = "2025.04.00"
 androidxConstraintlayout = "2.2.1"
 androidxCoreKtx = "1.16.0"
