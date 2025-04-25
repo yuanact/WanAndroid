@@ -76,7 +76,7 @@ class MainActivity : ComponentActivity() {
         val isEnable: Boolean = true,
     ) {
         Home("首页", R.drawable.home_24px, R.drawable.home_fill_24px),
-        Plaza("广场", R.drawable.dashboard_24px, R.drawable.dashboard_fill_24px, false),
+        Plaza("广场", R.drawable.dashboard_24px, R.drawable.dashboard_fill_24px),
         Mine("我的", R.drawable.face_24px, R.drawable.face_fill_24px),
     }
 

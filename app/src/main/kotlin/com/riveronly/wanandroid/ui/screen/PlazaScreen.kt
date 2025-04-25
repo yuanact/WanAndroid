@@ -32,7 +32,6 @@ import com.riveronly.wanandroid.ui.activity.screen.Screens
 import com.riveronly.wanandroid.ui.paging.PlazaPagingSource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,7 +56,11 @@ fun PlazaScreen() {
     val pagingItems = pager.flow.collectAsLazyPagingItems()
     val pullToRefreshState = rememberPullToRefreshState()
 
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .windowInsetsPadding(WindowInsets.statusBars)
+    ) {
         Text(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
