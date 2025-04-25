@@ -15,7 +15,6 @@ import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
@@ -96,6 +95,9 @@ fun MineScreen() {
 
     PullToRefreshBox(
         isRefreshing,
+        modifier = Modifier
+            .fillMaxSize()
+            .windowInsetsPadding(WindowInsets.statusBars),
         state = pullToRefreshState,
         onRefresh = {
             scope.launch {
@@ -120,8 +122,8 @@ fun MineScreen() {
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.surfaceContainerHigh)
                     .height(100.dp)
-                    .background(MaterialTheme.colorScheme.primary)
                     .clickable {
                         if (viewModel.userInfoRes.userInfo.id == 0) {
                             val intent = Intent(context, LoginActivity::class.java)
@@ -137,12 +139,10 @@ fun MineScreen() {
                         .size(48.dp),
                     painter = painterResource(id = R.drawable.face_24px),
                     contentDescription = "",
-                    tint = Color.White
                 )
                 Text(text = viewModel.userInfoRes.userInfo.nickname.takeIf { it.isNotBlank() }
                     ?: "请登录",
                     fontSize = 20.sp,
-                    color = Color.White,
                     fontWeight = FontWeight.Bold)
             }
             Column(

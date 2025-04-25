@@ -32,9 +32,11 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView()
+
         installSplashScreen()
         enableEdgeToEdge()
+
+        setContentView()
 
         //连续两次返回退到桌面
         onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
@@ -124,10 +126,9 @@ class MainActivity : ComponentActivity() {
                     }
                 ) { innerPadding ->
                     HorizontalPager(
-                        modifier = Modifier.padding(innerPadding),
-                        userScrollEnabled = false,
                         state = pagerState,
-                        beyondViewportPageCount = Tab.entries.size,
+                        userScrollEnabled = false,
+                        modifier = Modifier.padding(bottom = innerPadding.calculateBottomPadding()),
                     ) { index ->
                         if (isInitList[index]) {
                             when (Tab.entries[index]) {

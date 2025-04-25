@@ -88,6 +88,9 @@ fun HomeScreen() {
     var isRefreshing by remember { mutableStateOf(false) }
     val minAnimationDuration = 1000L
     PullToRefreshBox(
+        modifier = Modifier
+            .fillMaxSize()
+            .windowInsetsPadding(WindowInsets.statusBars),
         state = pullToRefreshState, isRefreshing = isRefreshing, onRefresh = {
             scope.launch {
                 isRefreshing = true
@@ -128,7 +131,7 @@ fun HomeScreen() {
                                     .size(24.dp),
                                 painter = painterResource(id = R.drawable.face_24px),
                                 contentDescription = "",
-                                tint = Color.Black
+                                tint = MaterialTheme.colorScheme.onSurface // 使用语义颜色，适配深色模式
                             )
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
@@ -145,7 +148,7 @@ fun HomeScreen() {
                                 }
                                 Text(
                                     modifier = Modifier
-                                        .border(1.dp, Color.Black, RoundedCornerShape(4.dp))
+                                        .border(1.dp, MaterialTheme.colorScheme.onSurface, RoundedCornerShape(4.dp))
                                         .padding(vertical = 1.dp)
                                         .width(50.dp),
                                     text = item.superChapterName,
