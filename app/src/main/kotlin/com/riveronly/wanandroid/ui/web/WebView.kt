@@ -83,6 +83,7 @@ fun WebView(
                     settings.isAlgorithmicDarkeningAllowed = forceDarkMode
                 } else {
                     if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                        @Suppress("DEPRECATION")
                         WebSettingsCompat.setForceDark(
                             settings,
                             if (forceDarkMode) WebSettingsCompat.FORCE_DARK_ON else WebSettingsCompat.FORCE_DARK_OFF
