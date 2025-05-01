@@ -9,4 +9,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    蒂芙尼蓝-->
+    <color name="tiffany_blue">#FF81D8D0</color>
+    <!--    克莱因蓝-->
+    <color name="klein_blue">#FF002FA7</color>
 </resources>

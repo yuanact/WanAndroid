@@ -5,7 +5,7 @@
 
     <style name="Theme.AppSplashScreen" parent="Theme.SplashScreen.Common">
         <!--  开屏页面底色-->
-        <item name="windowSplashScreenBackground">@color/purple_40</item>
+        <item name="windowSplashScreenBackground">@color/klein_blue</item>
         <!-- Splash结束后的主题-->
         <item name="postSplashScreenTheme">@style/Theme.App</item>
     </style>
