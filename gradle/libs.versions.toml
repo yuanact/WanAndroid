@@ -1,49 +1,101 @@
 [versions]
+# 核心库
 agp = "8.9.2"
+kotlin = "2.1.20"
+androidxDatastore = "1.1.4"
 androidxComposeBom = "2025.04.01"
-androidxConstraintlayout = "2.2.1"
 androidxCoreKtx = "1.16.0"
-androidxFragmentKtx = "1.8.6"
 androidxLifecycle = "2.8.7"
+composeCompiler = "1.5.15"
+
+# 官方库
+androidxConstraintlayout = "2.2.1"
+androidxFragmentKtx = "1.8.6"
 androidxNavigationCompose = "2.8.9"
 androidxWebkit = "1.13.0"
-#noinspection GradleDependency
-androidxDatastore = "1.1.4"
 androidxSplash = "1.0.1"
-kotlin = "2.1.20"
+camerax = "1.4.2"
+material-icons-extended = "1.7.8"
+pagingCompose = "3.3.6"
+android-tools = "31.9.2"
+accompanist-permissions = "0.34.0"
+room = "2.7.1"
+room-gradle-plugin = "2.7.1"
+ksp = "2.0.20-1.0.25"
+
+# 三方库
 kotlinxCoroutines = "1.8.1"
 matisse = "2.1.1"
 retrofit = "2.11.0"
-pagingCompose = "3.3.6"
 coilCompose = "2.7.0"
-
+mlkit = "17.3.0"
+zxing-core = "3.5.3"
 
 [libraries]
-androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
-androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
-androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
-androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-compose-animation = { group = "androidx.compose.animation", name = "animation" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose" }
+#核心库
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCoreKtx" } # 支持kotlin
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidxLifecycle" } # 组件支持生命周期管理
+androidx-activity-compose = { module = "androidx.activity:activity-compose" } # 支持在activity中嵌入compose组件
+androidx-ui = { module = "androidx.compose.ui:ui" }
+androidx-ui-graphics = { module = "androidx.compose.ui:ui-graphics" }
+androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "androidxComposeBom" } # 统一管理compose相关依赖版本
+
+# 官方库
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-animation = { group = "androidx.compose.animation", name = "animation" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraintlayout" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCoreKtx" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidxFragmentKtx" }
-androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigationCompose" }
 androidx-webkit = { group = "androidx.webkit", name = "webkit", version.ref = "androidxWebkit" }
 androidx-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "androidxSplash" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
+androidx-datastore-core = { module = "androidx.datastore:datastore-core", version.ref = "androidxDatastore" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "androidxDatastore" }
-coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
-kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxCoroutines" }
-github-matisse = { module = "io.github.leavesczy:matisse", version.ref = "matisse" }
-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
-retrofit-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" } # 简化相机调用
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" } # 相机生命周期管理
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" } # 相机视图容器
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" } # 简化数据库访问
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" } # room支持kotlin
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" } # room支持根据注解自动生成对应实现
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist-permissions" } # 简化权限请求
+material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "material-icons-extended" } # icon扩展库
 
+# 调试相关
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+
+# 三方库
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" } # 支持异步加载图片
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" } # 网络请求库
+retrofit-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" } # 支持网络响应结果转为指定类对象
+retrofit-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxCoroutines" }
+amap = { module = "com.amap.api:3dmap-location-search", version = "latest.integration" } # 高德地图
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxing-core" } # 二维码生成/识别（效率低）
+mlkit-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "mlkit" } # 二维码识别（基于机器学习）
+github-matisse = { module = "io.github.leavesczy:matisse", version.ref = "matisse" }
+
+# Dependencies of the included build-logic
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "android-tools" }
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradle-plugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+room-gradle-plugin = { group = "androidx.room", name = "room-gradle-plugin", version.ref = "room-gradle-plugin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
+# Plugins defined by this project
+local-android-compose-application = { id = "local.android.compose.application", version = "unspecified" }
+local-android-compose-library = { id = "local.android.compose.library", version = "unspecified" }
+local-android-room = { id = "local.android.room", version = "unspecified" }
+
+[bundles]
+datastore = ["androidx-datastore-core", "androidx-datastore-preferences"]
+retrofit = ["retrofit", "retrofit-serialization"]
+camerax = ["androidx-camera-camera2", "androidx-camera-lifecycle", "androidx-camera-view"]

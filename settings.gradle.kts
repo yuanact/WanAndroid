@@ -1,4 +1,6 @@
 pluginManagement {
+    includeBuild("build-logic")
+
     repositories {
         google {
             content {
@@ -21,3 +23,9 @@ dependencyResolutionManagement {
 
 rootProject.name = "WanAndroid"
 include(":app")
+include(":core:data:model")
+include(":core:data:repository")
+include(":core:ui:components")
+include(":core:ui:theme")
+include(":core:utils")
+include(":feature:qrcode")

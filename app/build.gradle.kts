@@ -1,13 +1,9 @@
-
 import com.android.build.gradle.internal.api.BaseVariantOutputImpl
 import java.io.FileInputStream
 import java.util.*
 
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.local.android.compose.application)
 }
 
 val configProperties = Properties()
@@ -18,11 +14,9 @@ keystoreProperties.load(FileInputStream(rootProject.file("keystore.properties"))
 
 android {
     namespace = "com.riveronly.wanandroid"
-    compileSdk = configProperties.getProperty("compileSdk").toInt()
 
     defaultConfig {
         applicationId = namespace
-        minSdk = configProperties.getProperty("minSdk").toInt()
         targetSdk = configProperties.getProperty("targetSdk").toInt()
         versionCode = configProperties.getProperty("versionCode").toInt()
         versionName = configProperties.getProperty("versionName")
@@ -69,19 +63,7 @@ android {
             applicationIdSuffix = ".dev"
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_21
-        targetCompatibility = JavaVersion.VERSION_21
-    }
-    kotlinOptions {
-        jvmTarget = "21"
-    }
-    kotlin {
-        jvmToolchain(21)
-    }
-    buildFeatures {
-        compose = true
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -101,25 +83,19 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.tooling.preview)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.animation)
-    implementation(libs.androidx.compose.material3)
+
+    implementation(project(":feature:qrcode"))
+
+    implementation(libs.androidx.animation)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.splashscreen)
     implementation(libs.androidx.webkit)
-    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.paging.compose)
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.retrofit)
-    implementation(libs.retrofit.serialization)
+    implementation(libs.bundles.datastore)
+    implementation(libs.bundles.retrofit)
     implementation(libs.kotlinx.serialization)
-    implementation(libs.coil.compose)
     implementation(libs.github.matisse)
+    implementation(libs.coil.compose)
 }
