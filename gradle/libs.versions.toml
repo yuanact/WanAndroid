@@ -2,26 +2,26 @@
 # 核心库
 agp = "8.9.2"
 kotlin = "2.1.20"
-androidxDatastore = "1.1.4"
-androidxComposeBom = "2025.04.01"
+androidxDatastore = "1.1.6"
+androidxComposeBom = "2025.05.00"
 androidxCoreKtx = "1.16.0"
-androidxLifecycle = "2.8.7"
+androidxLifecycle = "2.9.0"
 composeCompiler = "1.5.15"
 
 # 官方库
 androidxConstraintlayout = "2.2.1"
 androidxFragmentKtx = "1.8.6"
-androidxNavigationCompose = "2.8.9"
+androidxNavigationCompose = "2.9.0"
 androidxWebkit = "1.13.0"
 androidxSplash = "1.0.1"
 camerax = "1.4.2"
 material-icons-extended = "1.7.8"
 pagingCompose = "3.3.6"
-android-tools = "31.9.2"
-accompanist-permissions = "0.34.0"
+android-tools = "31.10.0"
+accompanist-permissions = "0.37.0"
 room = "2.7.1"
 room-gradle-plugin = "2.7.1"
-ksp = "2.0.20-1.0.25"
+ksp = "2.1.20-2.0.0"
 
 # 三方库
 kotlinxCoroutines = "1.8.1"
