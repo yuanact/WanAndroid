@@ -1,7 +1,7 @@
 [versions]
 # 核心库
-agp = "8.9.2"
-kotlin = "2.1.20"
+agp = "8.10.0"
+kotlin = "2.1.21"
 androidxDatastore = "1.1.6"
 androidxComposeBom = "2025.05.00"
 androidxCoreKtx = "1.16.0"
@@ -18,15 +18,15 @@ camerax = "1.4.2"
 material-icons-extended = "1.7.8"
 pagingCompose = "3.3.6"
 android-tools = "31.10.0"
-accompanist-permissions = "0.37.0"
+accompanist-permissions = "0.37.3"
 room = "2.7.1"
 room-gradle-plugin = "2.7.1"
 ksp = "2.1.20-2.0.0"
 
 # 三方库
 kotlinxCoroutines = "1.8.1"
-matisse = "2.1.1"
-retrofit = "2.11.0"
+matisse = "2.2.0"
+retrofit = "3.0.0"
 coilCompose = "2.7.0"
 mlkit = "17.3.0"
 zxing-core = "3.5.3"
