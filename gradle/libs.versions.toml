@@ -1,6 +1,6 @@
 [versions]
 # 核心库
-agp = "8.10.0"
+agp = "8.10.1"
 kotlin = "2.1.21"
 androidxDatastore = "1.1.7"
 androidxComposeBom = "2025.05.01"
@@ -17,11 +17,11 @@ androidxSplash = "1.0.1"
 camerax = "1.4.2"
 material-icons-extended = "1.7.8"
 pagingCompose = "3.3.6"
-android-tools = "31.10.0"
+android-tools = "31.10.1"
 accompanist-permissions = "0.37.3"
 room = "2.7.1"
 room-gradle-plugin = "2.7.1"
-ksp = "2.1.20-2.0.0"
+ksp = "2.1.21-2.0.1"
 
 # 三方库
 kotlinxCoroutines = "1.8.1"
