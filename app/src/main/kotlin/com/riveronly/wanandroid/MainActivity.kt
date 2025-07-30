@@ -71,8 +71,8 @@ class MainActivity : ComponentActivity() {
 
     enum class Tab(
         val title: String,
-        @DrawableRes val iconResNormal: Int,
-        @DrawableRes val iconResFill: Int,
+        @field:DrawableRes val iconResNormal: Int,
+        @field:DrawableRes val iconResFill: Int,
         val isEnable: Boolean = true,
     ) {
         Home("首页", R.drawable.home_24px, R.drawable.home_fill_24px),
